@@ -1,0 +1,350 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* top menu */
+
+header {
+    background-color: #222;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.active {
+            text-decoration: underline;
+        }
+
+
+/* about me page */
+
+.about-me {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.profile-image {
+    flex-shrink: 0;
+}
+
+    .profile-image img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+.about-text {
+    max-width: 600px;
+}
+
+    .about-text h1 {
+        font-size: 40px;
+        margin-top: 0;
+    }
+
+    .about-text p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+
+/* CV */
+
+.cv {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+    .cv h1 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+/* I use grid here to put the CV sections next to each other */
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.cv-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+    .cv-section h2 {
+        margin-top: 0;
+        font-size: 25px;
+    }
+
+    .cv-section h3 {
+        margin-bottom: 5px;
+    }
+
+    .cv-section p {
+        line-height: 1.6;
+    }
+
+    .cv-section ul {
+        line-height: 1.8;
+        padding-left: 20px;
+    }
+
+
+/* portfolio */
+
+.portfolio {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+    .portfolio h1 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+.portfolio-intro {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto 40px;
+    max-width: 700px;
+}
+
+/* grid makes the project cards look like a gallery */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .project-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 25px;
+}
+
+    .project-content h2 {
+        margin-top: 0;
+        font-size: 25px;
+    }
+
+    .project-content p {
+        line-height: 1.6;
+    }
+
+.technologies {
+    margin-top: 20px;
+}
+
+.project-link {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 10px 18px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+    .project-link:hover {
+        background-color: #444;
+    }
+
+
+/* footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* looks a bit smaller on tablets */
+
+@media (max-width: 768px) {
+
+    .about-me {
+        gap: 25px;
+        margin: 40px auto;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text h1 {
+        font-size: 34px;
+    }
+
+    .about-text p {
+        font-size: 17px;
+    }
+
+    .cv,
+    .portfolio {
+        margin: 40px auto;
+    }
+
+    .projects {
+        gap: 20px;
+    }
+
+    .project-card img {
+        height: 190px;
+    }
+}
+
+
+/* phone version */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+        nav a {
+            font-size: 17px;
+        }
+
+
+    /* about me */
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .profile-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+        .about-text h1 {
+            font-size: 30px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+        }
+
+
+    /* CV becomes one column on a phone */
+
+    .cv {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+        .cv h1 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+    .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .cv-section {
+        padding: 20px;
+    }
+
+
+    /* one project per row on small screens */
+
+    .portfolio {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+        .portfolio h1 {
+            font-size: 30px;
+        }
+
+    .portfolio-intro {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+        .project-content h2 {
+            font-size: 22px;
+        }
+}
+
